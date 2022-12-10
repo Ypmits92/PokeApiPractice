@@ -3,13 +3,11 @@ export default {}
 </script>
 
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-success" role="navigation" aria-label="main navigation">
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <router-link to="home" class="navbar-item">Home</router-link>
-        <a class="navbar-item">
-          Documentation
-        </a>
+        <router-link to="all" class="navbar-item">List all Pokemon</router-link>
       </div>
     </div>
   </nav>
