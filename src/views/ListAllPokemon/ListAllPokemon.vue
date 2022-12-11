@@ -15,9 +15,6 @@ export default {
     this.pokemons = result.results;
   },
   methods: {
-    pokemonDetail() {
-      return pokemonDetail
-    },
     async displayPrevious() {
       if (this.offset >= 20) {
         this.offset -= this.limit;
@@ -41,9 +38,6 @@ export default {
       const result = await response.json();
       this.pokemons.slice();
       this.pokemons = result.results;
-    },
-    createUrl(pokemon) {
-      return "all/" + pokemon.name;
     }
   }
 }
@@ -52,7 +46,7 @@ export default {
 <template>
   <h1 class="title is-2">List of all Pokemon</h1>
   <ul>
-    <li v-for="pokemon in pokemons"><router-link :to=this.createUrl(pokemon) >{{pokemon.name}}</router-link></li>
+    <li v-for="(pokemon, index) in pokemons"><router-link :to="{name: 'detail', params: {id: index + this.offset}}">{{pokemon.name}}</router-link></li>
   </ul>
   <button class="button is-danger" @click="displayPrevious">Previous</button>
   <button class="button is-success" @click="displayNext">Next</button>
