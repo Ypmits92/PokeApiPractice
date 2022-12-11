@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from "@/views/Home/Home.vue";
 import ListAllPokemon from "@/views/ListAllPokemon/ListAllPokemon.vue";
+import PokemonDetail from "@/views/PokemonDetail/PokemonDetail.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -16,6 +17,11 @@ const router = createRouter({
       path: "/all",
       component: ListAllPokemon
     },
+    {
+      name: "detail",
+      path: "/all/:name",
+      component: PokemonDetail
+    }
   ],
   linkActiveClass: "nav-item is-active",
   strict: true
